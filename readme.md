@@ -118,12 +118,15 @@ keras
 - **R²** – variance explained (tabular RF)
 
 ```mermaid
-flowchart LR
-    A[Predictions] --> B[Compute MAE]
-    A --> C[Compute RMSE]
-    A --> D[Compute MAPE/sMAPE]
-    A --> E[Compute R² (tabular)]
-    B & C & D & E --> F[Model Leaderboard]
+graph LR
+    A[Predictions] --> B[MAE]
+    A --> C[RMSE]
+    A --> D[MAPE/sMAPE]
+    A --> E[R²]
+    B --> F[Model Leaderboard]
+    C --> F
+    D --> F
+    E --> F
 ```
 
 ---
@@ -136,7 +139,6 @@ flowchart LR
 - **K-Means**: Unsupervised grouping for pollution regimes
 - **Visualization**: City-wise plots, prediction vs actual, error histograms
 
-*(These support data readiness and model quality and are summarized in your practical file under "Additional Work Done".)*
 
 ---
 
