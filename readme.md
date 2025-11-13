@@ -29,6 +29,7 @@ This repository contains a self-contained notebook that:
 
 ##  Architecture (High-Level)
 
+```mermaid
 graph TD
     A[Raw Weather Data Open-Meteo] --> B[Data Cleaning & Alignment]
     B --> C[EDA & Diagnostics]
@@ -40,7 +41,7 @@ graph TD
     F --> I[Evaluation Metrics]
     H --> I
     I --> J[Plots & CSVs]
-
+```
 ---
 
 ##  Models Implemented
