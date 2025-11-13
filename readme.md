@@ -29,19 +29,17 @@ This repository contains a self-contained notebook that:
 
 ##  Architecture (High-Level)
 
-```mermaid
-flowchart TD
-    A[Raw Weather Data\n(Open-Meteo)] --> B[Data Cleaning\n& Alignment]
-    B --> C[EDA & Diagnostics\n(trends, outliers, correlation)]
-    C --> D[Feature Engineering\n(lags, calendar, scaling, PCA)]
+graph TD
+    A[Raw Weather Data Open-Meteo] --> B[Data Cleaning & Alignment]
+    B --> C[EDA & Diagnostics]
+    C --> D[Feature Engineering]
     D --> E{Split by City?}
-    E -- Yes --> F[Per-City Tabular ML\nRandom Forest]
-    E -- Yes --> G[Per-City DL Windows\nSequences (48->1)]
-    G --> H[DL Models:\nCNN+BiLSTM / Stacked LSTM / BiGRU / Transformer]
-    F --> I[Evaluation\n(RMSE, MAE, R², sMAPE)]
+    E -->|Yes| F[Per-City Random Forest]
+    E -->|Yes| G[Per-City DL Windows]
+    G --> H[DL Models]
+    F --> I[Evaluation Metrics]
     H --> I
-    I --> J[Plots & CSVs\nper city/model]
-```
+    I --> J[Plots & CSVs]
 
 ---
 
